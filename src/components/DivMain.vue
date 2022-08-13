@@ -2,28 +2,29 @@
   <h1>TODO App</h1>
     <input type="text" v-model="task" name="" id="i_field" placeholder="Add your new todo" >
     <button id="btn" @click="getInput">+</button><br>
-        <div class="taskContainer">
-          
-        </div>
-    <br><h3>You have [] pending tasks</h3>
 </template>
 
 <script>
 import "../assets/styling.css";
 
 export default {
+    emits: ["addedTask"],
     data() {
         return{
             task: "",
+            x: [{id: 1,value: "Hi I'm data"}]
            
         };
     },
     methods:{
-        getInput(x){
-        console.log(this.task);
-         
-        x = this.task
-        this.$emit('addedTask', x )
+        getInput(){
+       
+       
+
+        this.x.push(this.task)
+         console.log(this.x);
+        this.$emit('addedTask', this.x )
+
         this.task=""
         },
     },

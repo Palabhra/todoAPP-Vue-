@@ -1,5 +1,5 @@
 .container{
-    height: 50%;
+    height: 500px;
     width: 45%;
     margin-left: 27%;
     margin-top: 15%;
@@ -27,7 +27,8 @@
     color: white;
 }
 .taskContainer{
-    height: 2.4pc;
+
+    position: relative;
     width: 80.7%;
     border-radius: 5px;
     margin-top: 1.5%;

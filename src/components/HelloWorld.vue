@@ -28,8 +28,11 @@ export default {
 },
   methods:{
     addTask(tasks){
-      this.remainTasks = tasks
-      console.log(this.remainTasks);
+      
+      this.remainTasks=[]
+      this.remainTasks.push(tasks)
+      
+      console.log(this.remainTasks.target);
     }
   }
 }
