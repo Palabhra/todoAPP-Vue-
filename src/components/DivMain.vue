@@ -5,30 +5,29 @@
 </template>
 
 <script>
+import { defineComponent } from "@vue/runtime-core";
 import "../assets/styling.css";
 
-export default {
+export default defineComponent({
     emits: ["addedTask"],
     data() {
+
         return{
             task: "",
-            x: [{id: 1,value: "Hi I'm data"}]
+            x: []
            
-        };
+        }
     },
     methods:{
         getInput(){
-       
-       
-
         this.x.push(this.task)
-         console.log(this.x);
+
         this.$emit('addedTask', this.x )
 
         this.task=""
         },
     },
-};
+});
 </script>
 <style scoped>
 h1{

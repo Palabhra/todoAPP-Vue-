@@ -1,9 +1,10 @@
 <template>
   <div class="container">
-    <h1>tasks:  {{this.remainTasks}}</h1>
     <DivMain @addedTask="addTask($event)"> </DivMain>
+<div v-for="(task,index) in remainTasks" :key="index">
+    <TaskRemain :remainingTasks="task"/>
+</div>
 
-    <TaskRemain/>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ import "../assets/styling.css"
 export default {
   data(){
     return{
-        remainTasks : ""
+        remainTasks : []
         
     }
   },
@@ -28,11 +29,10 @@ export default {
 },
   methods:{
     addTask(tasks){
+      console.log(tasks);
+      this.remainTasks=[...tasks]
       
-      this.remainTasks=[]
-      this.remainTasks.push(tasks)
-      
-      console.log(this.remainTasks.target);
+      console.log(this.remainTasks);
     }
   }
 }
